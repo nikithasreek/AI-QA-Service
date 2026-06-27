@@ -1,7 +1,6 @@
 # 📌 AI QA Service (FastAPI + RAG + LLM)
 
-An AI-powered Question Answering service built using FastAPI, PostgreSQL, Sentence Transformers, and Google Gemini LLM.  
-It implements a Retrieval-Augmented Generation (RAG) pipeline to answer user queries using stored documents.
+An AI-powered Question Answering service built using FastAPI, PostgreSQL, Sentence Transformers, and Google Gemini LLM. It implements a Retrieval-Augmented Generation (RAG) pipeline to answer user queries using stored documents. The application is deployed on AWS EC2 with interactive API documentation available through FastAPI Swagger UI.
 
 ---
 
