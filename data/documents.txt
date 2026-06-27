@@ -1,0 +1,4 @@
+FastAPI is a modern Python framework.
+Machine Learning enables systems to learn patterns.
+Generative AI creates content using neural networks.
+PostgreSQL is a relational database.
