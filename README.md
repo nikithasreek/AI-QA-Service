@@ -150,7 +150,88 @@ Access:
 
 http://<EC2-PUBLIC-IP>:8000/docs
 
----
+
+In details:
+
+In Detail: 
+## ☁️ AWS EC2 Deployment
+
+The application was deployed on an Ubuntu EC2 instance hosted on AWS.
+
+### 1. Connect to EC2
+
+```bash
+ssh -i your-key.pem ubuntu@<EC2-PUBLIC-IP>
+```
+
+### 2. Update the server
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+### 3. Install required packages
+
+```bash
+sudo apt install python3 python3-pip python3-venv git -y
+```
+
+### 4. Clone the repository
+
+```bash
+git clone https://github.com/nikithasreek/AI-QA-Service.git
+cd AI-QA-Service
+```
+
+### 5. Create and activate a virtual environment
+
+```bash
+python3 -m venv fastapi-env
+source ~/fastapi-env/bin/activate
+```
+
+### 6. Install dependencies
+
+```bash
+pip install -r requirements.txt
+pip install sqlalchemy psycopg2-binary
+```
+
+### 7. Configure environment variables
+
+Create a `.env` file and add your Google Gemini API key:
+
+```env
+GOOGLE_API_KEY2=YOUR_GOOGLE_API_KEY
+```
+
+### 8. Run the application
+
+```bash
+uvicorn app.main:app --host 0.0.0.0 --port 8000
+```
+
+Or run it in the background:
+
+```bash
+nohup uvicorn app.main:app --host 0.0.0.0 --port 8000 > app.log 2>&1 &
+```
+
+### 9. Verify the application
+
+```bash
+ps aux | grep uvicorn
+```
+The API is accessible at:
+
+```
+http://<EC2-PUBLIC-IP>:8000
+```
+
+Swagger documentation:
+
+```
+http://<EC2-PUBLIC-IP>:8000/docs
 
 ## 🛠️ Tech Stack
 
